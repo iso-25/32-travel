@@ -1,0 +1,51 @@
+export const travelsItems = [
+    {
+      id: 1,
+      pathImg: "/src/assets/home-travel1.png",
+      name: "Mount Fuji, ",
+      nameSpan: "Tokyo",
+      place: "Tokyo, Japan",
+      rating: "4.8",
+    },
+    {
+      id: 2,
+      pathImg: "/src/assets/home-travel2.png",
+      name: "Andes, ",
+      nameSpan: "South",
+      place: "South, America",
+      rating: "4.5",
+    },
+    {
+      id: 3,
+      pathImg: "/src/assets/home-travel1.png",
+      name: "Mount Fuji, ",
+      nameSpan: "Tokyo",
+      place: "Tokyo, Japan",
+      rating: "4.8",
+    },
+    {
+      id: 4,
+      pathImg: "/src/assets/home-travel2.png",
+      name: "Andes, ",
+      nameSpan: "South",
+      place: "South, America",
+      rating: "4.5",
+    },
+    {
+      id: 5,
+      pathImg: "/src/assets/home-travel1.png",
+      name: "Mount Fuji, ",
+      nameSpan: "Tokyo",
+      place: "Tokyo, Japan",
+      rating: "4.8",
+    },
+    {
+      id: 6,
+      pathImg: "/src/assets/home-travel2.png",
+      name: "Andes, ",
+      nameSpan: "South",
+      place: "South, America",
+      rating: "4.5",
+    },
+  ];
+ 
