@@ -1,12 +1,10 @@
-import { TravelItemHeart } from "../../../components/Icons/TravelItemHeart";
-import { TravelItemPoint } from "../../../components/Icons/TravelItemPoint";
-import { TravelItemStar } from "../../../components/Icons/TravelItemStar";
+import { TravelItemImg } from "../../../components/Icons/TravelItemImg";
 
 export const TravelItemHomeInfo = ({ itemTravel }) => {
   return (
     <div className="home-travel-item-container">
       <div className="home-travel-item-like">
-        <TravelItemHeart />
+        <TravelItemImg type="heart" />
       </div>
       <div className="home-travel-item-info">
         <div className="home-travel-item-info__name">
@@ -16,13 +14,13 @@ export const TravelItemHomeInfo = ({ itemTravel }) => {
         <div className="home-travel-item-info__detail">
           <div className="place">
             <span>
-              <TravelItemPoint />
+            <TravelItemImg type="point" />
             </span>
             {itemTravel.place}
           </div>
           <div className="rating">
             <span>
-              <TravelItemStar />
+            <TravelItemImg type="star" />
             </span>
             {itemTravel.rating}
           </div>
