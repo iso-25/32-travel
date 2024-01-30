@@ -19,9 +19,10 @@ body {
 main {
     display: block;
 }
-h1 {
-    font-size: 2em;
+h1, h2, h3, h4, p {
+    // font-size: 2em;
     margin: 0;
+    padding: 0;
 }
 hr {
     box-sizing: content-box;

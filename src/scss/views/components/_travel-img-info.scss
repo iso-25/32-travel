@@ -1,0 +1,110 @@
+.travel-img-info {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  left: 0;
+  top: 0;
+  padding: 19px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+
+  &__hedear {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__hedear-arrowLeft,
+  &__hedear-bookmark {
+    width: 44px;
+    height: 44px;
+    background: rgba(29, 29, 29, 0.4);
+    backdrop-filter: blur(20px);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  &__info {
+    width: 100%;
+    border-radius: 15px;
+    background: rgba(29, 29, 29, 0.30);
+    box-shadow: 0px 5px 9px 0px rgba(255, 255, 255, 0.10);
+    backdrop-filter: blur(20px);
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+    font-family: Roboto;
+    font-weight: 500;
+    color: #cac8c8;
+
+    .info-nameTravel {
+      color: #fff;
+      font-family: Inter;
+      font-size: 24px;
+      font-weight: 600;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+    }
+
+    .info-price {
+      color: #cac8c8;
+      font-family: Roboto;
+      font-size: 16px;
+      font-weight: 400;
+    }
+
+    .info-detail {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: #cac8c8;
+      font-family: Roboto;
+      font-size: 18px;
+      font-weight: 400;
+      line-height: normal;
+
+      .place {
+        padding-left: 22px;
+        color: #cac8c8;
+        position: relative;
+        & span {
+          max-width: 100%;
+          width: 22px;
+          height: 22px;
+          position: absolute;
+          bottom: 0;
+          left: -6px;
+          & svg {
+            width: 100%;
+            height: 100%;
+          }
+        }
+      }
+
+      .price-value {
+        height: 100%;
+        position: relative;
+        font-size: 26px;
+        font-weight: 500;
+        line-height: normal;
+        & span {
+          position: absolute;
+          bottom: 2px;
+          left: -15px;
+          color: #434343;
+          font-size: 20px;
+        }
+      }
+    }
+  }
+}

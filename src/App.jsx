@@ -3,7 +3,7 @@ import { Home } from "./views/Home/Home";
 import { History } from "./views/History/History";
 import { Heart } from "./views/Heart/Heart";
 import { Profile } from "./views/Profile/Profile";
-import { TravelPage } from "./views/TravelPage";
+import { TravelPage } from "./views/Travel/TravelPage";
 import { SplashScreen } from "./components/SplashScreen";
 import { useState } from "react";
 import { MenuIcon } from "./components/Icons/MenuIcon";

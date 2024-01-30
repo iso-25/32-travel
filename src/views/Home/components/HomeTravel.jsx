@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { travelsItems } from "../js/HomeTravel";
+import { travelsItems } from "../../js/TravelsArray";
 import { motion } from "framer-motion";
 import { TravelItemHomeInfo } from "./TravelItemHomeInfo";
 
@@ -38,7 +38,12 @@ export const HomeTravel = () => {
             variants={item}
             className="home-travel-item"
           >
-            <Link to="/travel">
+            <Link
+              to={{
+                pathname: "/travel",
+                state: { id: itemTravel.id, },
+              }}
+            >
               <img src={itemTravel.pathImg} alt="travel" />
               <TravelItemHomeInfo itemTravel={itemTravel} />
             </Link>
