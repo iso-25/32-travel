@@ -2,8 +2,8 @@
   padding: 28px;
 
   &__img {
-    max-width: 374px;
-    max-height: 460px;
+    width: 100%px;
+    height: 460px;
     border-radius: 25.5px;
     background: #d9d9d9;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
@@ -16,8 +16,9 @@
     img {
       border-radius: 30px;
       width: 100%;
-      height: auto;
+      height: 100%;
       object-fit: cover;
+      object-position: center center;
     }
   }
 

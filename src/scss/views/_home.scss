@@ -87,19 +87,23 @@
     justify-content: space-between;
     gap: 10px;
     margin-bottom: 40px;
+    height: 30px;
   }
 
-  &__title {
-    color: #2f2f2f;
-    font-size: 20px;
-    font-weight: 600;
-    font-family: Poppins;
-  }
-
-  &__view-all {
+  &__title ,&__view-all {
     color: #888;
+    font-family: Roboto;
     font-size: 16px;
     font-weight: 600;
+    line-height: normal;
+    transition: 0.2s all ease-in-out;
+    cursor: pointer;
+  }
+
+  .is-active-gruop {
+    color: #2f2f2f;
+    font-family: Poppins;
+    font-size: 20px;
   }
 
   &__list {
@@ -118,6 +122,8 @@
     font-family: Roboto;
     font-size: 16px;
     font-weight: 500;
+    cursor: pointer;
+    transition: 0.2s all ease-in-out;
 
     &.is-active {
       background: #2f2f2f;

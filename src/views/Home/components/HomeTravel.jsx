@@ -41,7 +41,7 @@ export const HomeTravel = () => {
             <Link
               to={{
                 pathname: "/travel",
-                state: { id: itemTravel.id, },
+                state: { id: itemTravel.id },
               }}
             >
               <img src={itemTravel.pathImg} alt="travel" />

@@ -15,18 +15,10 @@ export const TravelPage = (props) => {
   // const travel = travelsItems.find((item) => item.id === parseInt(id));
   const travel = travelsItems.find((item) => item.id === parseInt("2"));
 
-  const [isOverview, setIsClicked] = useState(true);
-  const handleOnClickOverview = () => {
-    setIsClicked(true);
-  };
-  const handleOnClickDetails = () => {
-    setIsClicked(false);
-  };
+  const [isOverview, setOverview] = useState(true);
 
   return (
     <>
-      {/* <button onClick={handleGoBack}>Back</button> */}
-      {/* <div>Travel</div> */}
       <div className="travel">
         <div className="travel__img">
           <img src={travel.pathImgTravel} alt="travel" />
@@ -35,14 +27,14 @@ export const TravelPage = (props) => {
 
         <div className="travel__type-info">
           <p
+            onClick={() => setOverview(true)}
             className={`overview ${isOverview ? "active-type" : ""}`}
-            onClick={handleOnClickOverview}
           >
             Overview
           </p>
           <p
+            onClick={() => setOverview(false)}
             className={`details ${isOverview ? "" : "active-type"}`}
-            onClick={handleOnClickDetails}
           >
             Details
           </p>
