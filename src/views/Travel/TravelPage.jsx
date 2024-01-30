@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { useLocation } from "react-router-dom";
-import { TravelImgInfo } from "./TravelImgInfo";
+import { TravelImgInfo } from "./components/TravelImgInfo";
 import { travelsItems } from "../js/TravelsArray";
 import React, { useState } from "react";
 import { TravelItemImg } from "/src/components/Icons/TravelItemImg";
@@ -62,7 +62,9 @@ export const TravelPage = (props) => {
         </div>
 
         <div className="travel__desc">
+          <div className="travel__desc-txt">
           {isOverview ? travel.overviev : travel.details}
+          </div>
         </div>
 
         <div className="travel__btn">
