@@ -14,7 +14,7 @@ export const TravelImgInfo = ({ itemTravel, onClick }) => {
 
       <div className="travel-img-info__info">
         <div className="info-nameTravel">
-          {itemTravel.nameTravel}
+          <p>{itemTravel.nameTravel}</p>
           <div className="info-price">Price</div>
         </div>
         <div className="info-detail">
@@ -26,7 +26,7 @@ export const TravelImgInfo = ({ itemTravel, onClick }) => {
           </div>
           <div className="price-value">
             <span>{itemTravel.currency}</span>
-            {itemTravel.price}
+            <p>{itemTravel.price}</p>
           </div>
         </div>
       </div>

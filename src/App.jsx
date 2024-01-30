@@ -32,7 +32,6 @@ function App() {
 					</Routes>
 					{currentUrl !== "/travel" && (
 						<header>
-							{/* <Link to="/travel"><MenuIcon type='home'/></Link> */}
 							<NavLink exact activeClassName="is-active" to="/">
 								<MenuIcon type="home" />
 							</NavLink>
