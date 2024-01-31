@@ -1,34 +1,34 @@
-import { useEffect, useState, useRef } from "react";
+import { useState, useRef, useEffect, useLayoutEffect } from "react";
 import { useSpring, animated } from "react-spring";
 
 export const HomePlaces = () => {
   const [tab, setTab] = useState(1);
   const [popular, setViewAll] = useState(true);
-  const [prevHeight, setPrevHeight] = useState("auto");
+  const [prevHeight, setPrevHeight] = useState(null);
   const [display, setDisplay] = useState("flex");
   const ref = useRef(null);
-
+  
   useEffect(() => {
     if (ref.current) {
-      setPrevHeight(`${ref.current.clientHeight}px`);
+      setPrevHeight(ref.current.clientHeight);
     }
-  }, [ref.current]);
+  }, []);
 
   const clickViewAll = () => {
-    setPrevHeight(`${ref.current.clientHeight}px`);
+    setPrevHeight(ref.current.clientHeight);
     setViewAll(false);
   };
 
   const animationHomePlacesList = useSpring({
-    opacity: popular ? 1 : 0,
-    height: popular ? prevHeight : "0",
-    transform: popular ? "scaleY(1)" : "scaleY(0)",
-    marginBottom: popular ? "21px" : "0",
     onStart: () => {
       if (popular) {
         setDisplay("flex");
-      }
+      } 
     },
+    opacity: popular ? 1 : 0,
+    height: popular ? (prevHeight !== null ? `${prevHeight}px` : '54px') : '0',
+    transform: popular ? "scaleY(1)" : "scaleY(0)",
+    marginBottom: popular ? "21px" : "0",
     onRest: () => {
       if (!popular) {
         setDisplay("none");
@@ -40,7 +40,7 @@ export const HomePlaces = () => {
   });
 
   const animationHomePlacesHeader = useSpring({
-    marginBottom: popular ? "40px" : "21",
+    marginBottom: popular ? "40px" : "0",
     config: {
       duration: 300,
     },
