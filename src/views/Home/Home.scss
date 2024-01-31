@@ -88,7 +88,7 @@
     align-items: center;
     justify-content: space-between;
     gap: 10px;
-    margin-bottom: 40px;
+    // margin-bottom: 40px;
     height: 30px;
   }
 
@@ -109,11 +109,10 @@
   }
 
   &__list {
-    display: flex;
     gap: 25px;
     white-space: nowrap;
     overflow-x: auto;
-    margin-bottom: 21px;
+    overflow-y: hidden;
   }
 
   &__item {
@@ -126,7 +125,7 @@
     font-weight: 500;
     cursor: pointer;
     transition: 0.2s all ease-in-out;
-
+    
     &.is-active {
       background: #2f2f2f;
       color: #fff;
@@ -138,6 +137,7 @@
 .home-travel {
   padding-left: 26px;
   padding-top: 21px;
+  transition: 0.3s all ease-in-out;
 
   &__list {
     display: flex;

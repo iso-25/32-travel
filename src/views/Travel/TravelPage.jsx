@@ -5,16 +5,24 @@ import { travelsItems } from "../js/TravelsArray";
 import React, { useState } from "react";
 import { TravelItemImg } from "/src/components/Icons/TravelItemImg";
 
-export const TravelPage = (props) => {
+export const TravelPage = () => {
   const navigate = useNavigate();
   const handleGoBack = () => {
     navigate(-1);
   };
-  const location = useLocation();
-  const id = location.state && location.state.id;
-  // const travel = travelsItems.find((item) => item.id === parseInt(id));
-  const travel = travelsItems.find((item) => item.id === parseInt("2"));
 
+  const location = useLocation();
+  if (location.state === null || Number.isNaN(location.state)) {
+    return (<div className="invalid-state-id">Invalid state or ID data
+      <button onClick={handleGoBack}>Back</button>
+    </div>);
+  }
+  const travel = travelsItems.find((item) => item.id === parseInt(location.state));
+  if (!travel) {
+    return (<div className="invalid-state-id">There is no record in the array with ID "{location.state}"
+      <button onClick={handleGoBack}>Back</button>
+    </div>);
+  }
   const [isOverview, setOverview] = useState(true);
 
   return (

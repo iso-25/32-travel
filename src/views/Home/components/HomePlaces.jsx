@@ -1,11 +1,57 @@
-import { useState } from "react";
+import { useEffect, useState, useRef } from "react";
+import { useSpring, animated } from "react-spring";
 
 export const HomePlaces = () => {
   const [tab, setTab] = useState(1);
   const [popular, setViewAll] = useState(true);
+  const [prevHeight, setPrevHeight] = useState("auto");
+  const [display, setDisplay] = useState("flex");
+  const ref = useRef(null);
+
+  useEffect(() => {
+    if (ref.current) {
+      setPrevHeight(`${ref.current.clientHeight}px`);
+    }
+  }, [ref.current]);
+
+  const clickViewAll = () => {
+    setPrevHeight(`${ref.current.clientHeight}px`);
+    setViewAll(false);
+  };
+
+  const animationHomePlacesList = useSpring({
+    opacity: popular ? 1 : 0,
+    height: popular ? prevHeight : "0",
+    transform: popular ? "scaleY(1)" : "scaleY(0)",
+    marginBottom: popular ? "21px" : "0",
+    onStart: () => {
+      if (popular) {
+        setDisplay("flex");
+      }
+    },
+    onRest: () => {
+      if (!popular) {
+        setDisplay("none");
+      }
+    },
+    config: {
+      duration: 300,
+    },
+  });
+
+  const animationHomePlacesHeader = useSpring({
+    marginBottom: popular ? "40px" : "21",
+    config: {
+      duration: 300,
+    },
+  });
+
   return (
     <div className="home-places">
-      <div className="home-places__header">
+      <animated.div
+        className="home-places__header"
+        style={animationHomePlacesHeader}
+      >
         <div
           onClick={() => setViewAll(true)}
           className={`home-places__title ${popular ? "is-active-gruop" : ""}`}
@@ -13,16 +59,20 @@ export const HomePlaces = () => {
           Popular places
         </div>
         <div
-          onClick={() => setViewAll(false)}
+          onClick={clickViewAll}
           className={`home-places__view-all ${
             popular ? "" : "is-active-gruop"
           }`}
         >
           View all
         </div>
-      </div>
+      </animated.div>
 
-      <div className="home-places__list">
+      <animated.div
+        className="home-places__list"
+        style={{ ...animationHomePlacesList, display: display }}
+        ref={ref}
+      >
         <div
           onClick={() => setTab(1)}
           className={`home-places__item ${tab === 1 ? "is-active" : ""}`}
@@ -41,7 +91,7 @@ export const HomePlaces = () => {
         >
           Latest
         </div>
-      </div>
+      </animated.div>
     </div>
   );
 };

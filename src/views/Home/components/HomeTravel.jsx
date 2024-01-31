@@ -38,12 +38,7 @@ export const HomeTravel = () => {
             variants={item}
             className="home-travel-item"
           >
-            <Link
-              to={{
-                pathname: "/travel",
-                state: { id: itemTravel.id },
-              }}
-            >
+            <Link to="/travel" state={itemTravel.id}>
               <img src={itemTravel.pathImg} alt="travel" />
               <TravelItemHomeInfo itemTravel={itemTravel} />
             </Link>
