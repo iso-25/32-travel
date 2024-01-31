@@ -1,4 +1,4 @@
-@import './components/TravelImgInfo.scss';
+@import "./components/TravelImgInfo.scss";
 
 .travel {
   padding: 28px;
@@ -92,7 +92,6 @@
     margin-bottom: 20px;
     overflow: hidden;
     overflow: auto;
-
   }
 
   &__desc-txt {
@@ -106,9 +105,9 @@
       rgba(165, 165, 165, 0) 89.06%
     );
     background-clip: text;
-     -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      padding-right: 15px;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding-right: 15px;
   }
 
   &__btn {
