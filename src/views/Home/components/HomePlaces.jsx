@@ -4,7 +4,8 @@ import { useSpring, animated } from "react-spring";
 export const HomePlaces = () => {
   const [tab, setTab] = useState(1);
   const [popular, setViewAll] = useState(true);
-  const [prevHeight, setPrevHeight] = useState(null);
+  const [defaultHeight, setdefaultHeight] = useState(54);
+  const [prevHeight, setPrevHeight] = useState(defaultHeight);
   const [display, setDisplay] = useState("flex");
   const ref = useRef(null);
   
@@ -15,18 +16,28 @@ export const HomePlaces = () => {
   }, []);
 
   const clickViewAll = () => {
+    if (ref.current.clientHeight === 0) {
+      setPrevHeight(defaultHeight);  
+    } else {
     setPrevHeight(ref.current.clientHeight);
+    }
     setViewAll(false);
   };
+
+  useEffect(() => {
+    if (prevHeight > 0 && prevHeight !==defaultHeight) {
+      setdefaultHeight(prevHeight);
+    }
+  }, [prevHeight]);
 
   const animationHomePlacesList = useSpring({
     onStart: () => {
       if (popular) {
         setDisplay("flex");
-      } 
+      }
     },
     opacity: popular ? 1 : 0,
-    height: popular ? (prevHeight !== null ? `${prevHeight}px` : '54px') : '0',
+    height: popular ? (prevHeight !== null ? `${prevHeight}px` : '${defaultHeight}px' ) : '0',
     transform: popular ? "scaleY(1)" : "scaleY(0)",
     marginBottom: popular ? "21px" : "0",
     onRest: () => {
