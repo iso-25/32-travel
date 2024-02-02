@@ -13,24 +13,55 @@ export const TravelPage = () => {
 
   const location = useLocation();
   if (location.state === null || Number.isNaN(location.state)) {
-    return (<div className="invalid-state-id">Invalid state or ID data
-      <button onClick={handleGoBack}>Back</button>
-    </div>);
+    return (
+      <div className="invalid-state-id">
+        Invalid state or ID data
+        <button onClick={handleGoBack}>Back</button>
+      </div>
+    );
   }
-  const travel = travelsItems.find((item) => item.id === parseInt(location.state));
+  const travel = travelsItems.find(
+    (item) => item.id === parseInt(location.state)
+  );
   if (!travel) {
-    return (<div className="invalid-state-id">There is no record in the array with ID "{location.state}"
-      <button onClick={handleGoBack}>Back</button>
-    </div>);
+    return (
+      <div className="invalid-state-id">
+        There is no record in the array with ID "{location.state}"
+        <button onClick={handleGoBack}>Back</button>
+      </div>
+    );
   }
   const [isOverview, setOverview] = useState(true);
 
   return (
     <>
       <div className="travel">
-        <div className="travel__img">
-          <img src={travel.pathImgTravel} alt="travel" />
-          <TravelImgInfo itemTravel={travel} onClick={handleGoBack} />
+        <div className="travel__main-container">
+          <div className="travel__img">
+            <img src={travel.pathImgTravel} alt="travel" />
+            <TravelImgInfo itemTravel={travel} onClick={handleGoBack} />
+          </div>
+          <div className="travel__indexes indexes-desktop">
+          <div className="time">
+            <span>
+              <TravelItemImg type="clock" />
+            </span>
+            {travel.time} hours
+          </div>
+          <div className="temp">
+            <span>
+              <TravelItemImg type="cloud" />
+            </span>
+            {travel.temperature} &nbsp; <small className="cels">&deg;</small>C
+          </div>
+          <div className="rating">
+            <span>
+              <TravelItemImg type="star2" />
+            </span>
+            {travel.rating}
+          </div>
+
+          </div>
         </div>
 
         <div className="travel__type-info">
@@ -48,7 +79,7 @@ export const TravelPage = () => {
           </p>
         </div>
 
-        <div className="travel__indexes">
+        <div className="travel__indexes  indexes-mobile">
           <div className="time">
             <span>
               <TravelItemImg type="clock" />
@@ -71,7 +102,7 @@ export const TravelPage = () => {
 
         <div className="travel__desc">
           <div className="travel__desc-txt">
-          {isOverview ? travel.overviev : travel.details}
+            {isOverview ? travel.overviev : travel.details}
           </div>
         </div>
 

@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import { Routes, Route, NavLink, useLocation } from 'react-router-dom';
-import { animated, useTransition } from 'react-spring';
+import React, { useState, useEffect } from "react";
+import { Routes, Route, NavLink, useLocation } from "react-router-dom";
+import { animated, useTransition } from "react-spring";
 import { Home } from "./views/Home/Home";
 import { History } from "./views/History/History";
 import { Heart } from "./views/Heart/Heart";
@@ -13,10 +13,10 @@ const AnimatedRoutes = () => {
   const location = useLocation();
 
   const transitions = useTransition(location, {
-    from: { opacity: 0, transform: 'translate3d(100%,0,0)' },
-    enter: { opacity: 1, transform: 'translate3d(0,0,0)' },
-    leave: { opacity: 0, transform: 'translate3d(-100%,0,0)' },
-	config: { duration: 100 }, 
+    from: { opacity: 0, transform: "translate3d(100%,0,0)" },
+    enter: { opacity: 1, transform: "translate3d(0,0,0)" },
+    leave: { opacity: 0, transform: "translate3d(-100%,0,0)" },
+    config: { duration: 100 },
   });
 
   return transitions((style, item) => (
@@ -36,6 +36,7 @@ function App() {
   const location = useLocation();
   const currentUrl = location.pathname;
   const [isSpinner, setIsSpinner] = useState(true);
+  const [otherPages, setOtherPages] = useState(false);
 
   useEffect(() => {
     const timeoutId = setTimeout(() => {
@@ -45,33 +46,58 @@ function App() {
     return () => clearTimeout(timeoutId);
   }, []);
 
+  useEffect(() => {
+    if (currentUrl !== "/" && currentUrl !== "/history" && currentUrl !== "/heart" && currentUrl !== "/profile") {
+      setOtherPages(true);
+    } else {
+      setOtherPages(false);
+    }
+  }, [currentUrl]);
+
+
   return (
     <>
       {!isSpinner && (
         <>
+        <div className={`wrapper ${ otherPages ? "other-pages" : ""}`}>
           <AnimatedRoutes />
           {currentUrl !== "/travel" && (
             <header>
               <NavLink exact activeClassName="is-active" to="/">
-                <span className='header-app'><MenuIcon type="home" /></span>
-                <span className='header-app-active'><MenuIcon type="home-active" /></span>
+                <span className="header-app">
+                  <MenuIcon type="home" />
+                </span>
+                <span className="header-app-active">
+                  <MenuIcon type="home-active" />
+                </span>
               </NavLink>
               <NavLink activeClassName="is-active" to="/history">
-                {/* <MenuIcon type="history" /> */}
-                <span className='header-app'><MenuIcon type="history" /></span>
-                <span className='header-app-active'><MenuIcon type="history-active" /></span>
+                <span className="header-app">
+                  <MenuIcon type="history" />
+                </span>
+                <span className="header-app-active">
+                  <MenuIcon type="history-active" />
+                </span>
               </NavLink>
               <NavLink activeClassName="is-active" to="/heart">
-                <span className='header-app'><MenuIcon type="heart" /></span>
-                <span className='header-app-active'><MenuIcon type="heart-active" /></span>
+                <span className="header-app">
+                  <MenuIcon type="heart" />
+                </span>
+                <span className="header-app-active">
+                  <MenuIcon type="heart-active" />
+                </span>
               </NavLink>
               <NavLink activeClassName="is-active" to="/profile">
-                {/* <MenuIcon type="profile" /> */}
-                <span className='header-app'><MenuIcon type="profile" /></span>
-                <span className='header-app-active'><MenuIcon type="profile-active" /></span>
+                <span className="header-app">
+                  <MenuIcon type="profile" />
+                </span>
+                <span className="header-app-active">
+                  <MenuIcon type="profile-active" />
+                </span>
               </NavLink>
             </header>
           )}
+          </div>
         </>
       )}
       {isSpinner && <SplashScreen />}

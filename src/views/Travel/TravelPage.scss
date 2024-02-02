@@ -1,5 +1,9 @@
 @import "./components/TravelImgInfo.scss";
 
+header {
+  
+}
+
 .invalid-state-id{
   padding: 150px;
   display: flex;
@@ -11,7 +15,40 @@
 }
 
 .travel {
+
+
   padding: 28px;
+
+  &__main-container{
+    display: flex;
+    // flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+
+    .indexes-desktop{
+      max-width: 20%;
+      width: 100%;
+      display: none;
+
+      .time,
+      .temp,
+      .rating {
+  
+        & span {
+          margin-right: 26px;
+        }
+      }
+
+      @include tablet-small {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 100px;
+        }      
+    }
+    }
 
   &__img {
     width: 100%px;

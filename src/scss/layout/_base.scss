@@ -2,6 +2,23 @@
 // font-family: 'Montserrat', sans-serif;
 // font-family: 'Poppins', sans-serif;
 // font-family: 'Roboto', sans-serif;
+html {
+  font-size: 1px;
+
+  @include tablet-small {
+    font-size: 1.1px;
+  }
+  @include tablet {
+    font-size: 1.2px;
+  }
+  @include desktop-small {
+    font-size: 1.4px;
+  }
+  @include desktop {
+    font-size: 1.5px;
+  }
+
+}
 body {
   font-family: "Montserrat", sans-serif;
 }
@@ -13,18 +30,42 @@ body,
 
 #root {
   overflow-y: auto;
+
 }
+
+.wrapper {
+  width: 100%;
+  height: 100%;
+  padding-bottom: 80rem;
+
+  @include desktop-small {
+    padding-bottom: 0;
+    display: grid;
+    grid-template-columns: 1fr 200rem;
+  }
+
+} 
+
+.other-pages{
+  padding-bottom: 0;
+
+  @include desktop-small {
+    display: flex;
+  }
+}
+
+
 header {
   position: fixed;
   bottom: 0;
   left: 0;
-  height: 65px;
+  height: 65rem;
   width: 100%;
   background: #fff;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 64px 38px;
+  padding: 0 64rem 38rem;
   transition: all 0.2s ease-in;
 
   .header-app-active {
@@ -34,14 +75,11 @@ header {
     width: 22px;
     height: 22px;
     display: flex;
-    // justify-content: flex;
     align-items: center;
     & svg {
       width: 100%;
       height: 100%;
-      
-      }
-  
+    }
   }
   & svg {
     width: 22px;
@@ -62,6 +100,13 @@ header {
       transform: translateX(-50%) scale(0);
       transition: all 0.2s ease-in;
       opacity: 0;
+
+      @include desktop-small {
+        bottom: calc(50% + -8px);
+        left: calc(150% + 8px);
+        // right: 47px;
+        transform: translateY(-50%) scale(0);
+      }
     }
   }
 
@@ -78,7 +123,20 @@ header {
     &::after {
       transform: translateX(-50%) scale(1);
       opacity: 1;
+      @include desktop-small {
+        transform: translateY(-50%) scale(1);
+      }
     }
+  }
+
+  @include desktop-small {
+    position: static;
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+    gap: 100px;
+    border-left: 1px solid #bebebe;
+    box-shadow: 1px 1px 20px #bebebe;
   }
 }
 li {
@@ -87,13 +145,6 @@ li {
 ul {
   margin: 0;
   padding: 0;
-}
-
-.home,
-.history,
-.heart,
-.profile {
-  padding-bottom: 80px;
 }
 
 .material-icons-outlined {

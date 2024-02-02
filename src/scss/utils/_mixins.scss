@@ -1,0 +1,33 @@
+// MEDIA QUERIES
+
+// breakpoints
+$tablet-small: 576px;
+$tablet: 768px;
+$desktop-small: 992px;
+$desktop: 1200px;
+
+@mixin tablet-small {
+  @media (min-width: $tablet-small) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: $tablet) {
+    @content;
+  }
+}
+
+@mixin desktop-small {
+  @media (min-width: $desktop-small) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: $desktop) {
+    @content;
+  }
+}
+
+
