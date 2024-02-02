@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { useState } from "react";
 import { travelsItems } from "../../js/TravelsArray";
 import { motion } from "framer-motion";
 import { TravelItemHomeInfo } from "./TravelItemHomeInfo";
@@ -24,6 +25,19 @@ export const HomeTravel = () => {
     },
   };
 
+  const [localTravelsItems , setTravelsItems] = useState(travelsItems);
+
+  const handleLikeClick = (travelIndex) => {
+    setTravelsItems((prevItems) => {
+      const newItems = [...prevItems];
+      newItems[travelIndex] = {
+        ...newItems[travelIndex],
+        like: !newItems[travelIndex].like,
+      };
+      return newItems;
+    });
+  };
+
   return (
     <div className="home-travel">
       <motion.ul
@@ -32,7 +46,7 @@ export const HomeTravel = () => {
         initial="hidden"
         animate="visible"
       >
-        {travelsItems.map((itemTravel) => (
+        {localTravelsItems .map((itemTravel, travelIndex) => (
           <motion.li
             key={itemTravel.id}
             variants={item}
@@ -42,6 +56,16 @@ export const HomeTravel = () => {
               <img src={itemTravel.pathImg} alt="travel" />
               <TravelItemHomeInfo itemTravel={itemTravel} />
             </Link>
+
+            <div className="home-travel-item-like">
+              <span
+                onClick={() => handleLikeClick(travelIndex)}
+                className="material-icons-outlined"
+              >
+                {itemTravel.like ? "favorite" : "favorite_border"}
+              </span>
+            </div>
+
           </motion.li>
         ))}
       </motion.ul>

@@ -25,7 +25,24 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 0 64px 38px;
+  transition: all 0.2s ease-in;
 
+  .header-app-active {
+    display: none;
+  }
+  & span {
+    width: 22px;
+    height: 22px;
+    display: flex;
+    // justify-content: flex;
+    align-items: center;
+    & svg {
+      width: 100%;
+      height: 100%;
+      
+      }
+  
+  }
   & svg {
     width: 22px;
     height: 22px;
@@ -49,12 +66,20 @@ header {
   }
 
   .active {
+    transition: all 0.2s ease-in;
+    .header-app {
+      display: none;
+    }
+
+    .header-app-active {
+      display: inherit;
+    }
+
     &::after {
       transform: translateX(-50%) scale(1);
       opacity: 1;
     }
   }
-
 }
 li {
   list-style: none;
@@ -69,4 +94,10 @@ ul {
 .heart,
 .profile {
   padding-bottom: 80px;
+}
+
+.material-icons-outlined {
+  font-family: "Material Icons";
+  color: #e1e1e1;
+  font-size: 28px;
 }

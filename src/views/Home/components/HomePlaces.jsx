@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect, useLayoutEffect } from "react";
+import { useState, useRef, useEffect} from "react";
 import { useSpring, animated } from "react-spring";
 
 export const HomePlaces = () => {

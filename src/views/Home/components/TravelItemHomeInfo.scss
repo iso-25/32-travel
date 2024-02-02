@@ -8,19 +8,19 @@
   padding: 15px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: end;
   align-items: flex-end;
 
-  .home-travel-item-like {
-    width: 44px;
-    height: 44px;
-    background: rgba(29, 29, 29, 0.4);
-    backdrop-filter: blur(20px);
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+  // .home-travel-item-like {
+  //   width: 44px;
+  //   height: 44px;
+  //   background: rgba(29, 29, 29, 0.4);
+  //   backdrop-filter: blur(20px);
+  //   border-radius: 50%;
+  //   display: flex;
+  //   justify-content: center;
+  //   align-items: center;
+  // }
 
   .home-travel-item-info {
     width: 100%;

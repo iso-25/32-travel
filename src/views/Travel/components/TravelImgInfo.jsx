@@ -1,6 +1,9 @@
+import { useState } from "react";
 import { TravelItemImg } from "/src/components/Icons/TravelItemImg";
 
 export const TravelImgInfo = ({ itemTravel, onClick }) => {
+  const [isBookmark, setBookmark] = useState(false);
+
   return (
     <div className="travel-img-info">
       <div className="travel-img-info__hedear">
@@ -8,7 +11,12 @@ export const TravelImgInfo = ({ itemTravel, onClick }) => {
           <TravelItemImg type="arrowLeft" />
         </div>
         <div className="travel-img-info__hedear-bookmark">
-          <TravelItemImg type="bookmark" />
+          <span
+            onClick={() => setBookmark(!isBookmark)}
+            className="material-icons-outlined"
+          >
+            {isBookmark ? "bookmark" : "bookmark_border"}
+          </span>
         </div>
       </div>
 

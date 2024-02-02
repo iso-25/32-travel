@@ -53,16 +53,22 @@ function App() {
           {currentUrl !== "/travel" && (
             <header>
               <NavLink exact activeClassName="is-active" to="/">
-                <MenuIcon type="home" />
+                <span className='header-app'><MenuIcon type="home" /></span>
+                <span className='header-app-active'><MenuIcon type="home-active" /></span>
               </NavLink>
               <NavLink activeClassName="is-active" to="/history">
-                <MenuIcon type="history" />
+                {/* <MenuIcon type="history" /> */}
+                <span className='header-app'><MenuIcon type="history" /></span>
+                <span className='header-app-active'><MenuIcon type="history-active" /></span>
               </NavLink>
               <NavLink activeClassName="is-active" to="/heart">
-                <MenuIcon type="heart" />
+                <span className='header-app'><MenuIcon type="heart" /></span>
+                <span className='header-app-active'><MenuIcon type="heart-active" /></span>
               </NavLink>
               <NavLink activeClassName="is-active" to="/profile">
-                <MenuIcon type="profile" />
+                {/* <MenuIcon type="profile" /> */}
+                <span className='header-app'><MenuIcon type="profile" /></span>
+                <span className='header-app-active'><MenuIcon type="profile-active" /></span>
               </NavLink>
             </header>
           )}
