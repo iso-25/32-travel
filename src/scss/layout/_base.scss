@@ -5,19 +5,12 @@
 html {
   font-size: 1px;
 
-  @include tablet-small {
-    font-size: 1.1px;
-  }
-  @include tablet {
-    font-size: 1.2px;
-  }
   @include desktop-small {
-    font-size: 1.4px;
+    font-size: 1.05px;
   }
   @include desktop {
-    font-size: 1.5px;
+    font-size: 1.2px;
   }
-
 }
 body {
   font-family: "Montserrat", sans-serif;
@@ -30,23 +23,24 @@ body,
 
 #root {
   overflow-y: auto;
-
 }
 
 .wrapper {
   width: 100%;
   height: 100%;
   padding-bottom: 80rem;
+  overflow-y: auto;
 
   @include desktop-small {
     padding-bottom: 0;
     display: grid;
     grid-template-columns: 1fr 200rem;
+    padding-left: 26rem;
+  
   }
+}
 
-} 
-
-.other-pages{
+.other-pages {
   padding-bottom: 0;
 
   @include desktop-small {
@@ -54,36 +48,44 @@ body,
   }
 }
 
-
 header {
   position: fixed;
   bottom: 0;
   left: 0;
-  height: 65rem;
+  height: 82rem;
   width: 100%;
   background: #fff;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 64rem 38rem;
+  padding: 20rem 64rem 38rem;
   transition: all 0.2s ease-in;
 
   .header-app-active {
     display: none;
   }
   & span {
-    width: 22px;
-    height: 22px;
+    width: 22rem;
+    height: 22rem;
     display: flex;
     align-items: center;
     & svg {
       width: 100%;
       height: 100%;
     }
+
+    @include desktop-small {
+      cursor: pointer;
+      transition: 0.2s all ease-in-out;
+      &:hover {
+        transform: scale(2);
+      }
+    }
+
   }
   & svg {
-    width: 22px;
-    height: 22px;
+    width: 22rem;
+    height: 22rem;
   }
   & a {
     position: relative;
@@ -91,20 +93,19 @@ header {
       content: "";
       position: absolute;
       display: block;
-      width: 8px;
-      height: 8px;
+      width: 8rem;
+      height: 8rem;
       border-radius: 50%;
       background: #ff4a4a;
-      bottom: -17px;
+      bottom: -17rem;
       left: 50%;
       transform: translateX(-50%) scale(0);
       transition: all 0.2s ease-in;
       opacity: 0;
 
       @include desktop-small {
-        bottom: calc(50% + -8px);
-        left: calc(150% + 8px);
-        // right: 47px;
+        bottom: calc(50% + -8rem);
+        left: calc(150% + 8rem);
         transform: translateY(-50%) scale(0);
       }
     }
@@ -134,9 +135,9 @@ header {
     height: 100%;
     flex-direction: column;
     justify-content: center;
-    gap: 100px;
-    border-left: 1px solid #bebebe;
-    box-shadow: 1px 1px 20px #bebebe;
+    gap: 100rem;
+    border-left: 1rem solid #bebebe;
+    box-shadow: 1rem 1rem 20rem #bebebe;
   }
 }
 li {
@@ -150,5 +151,5 @@ ul {
 .material-icons-outlined {
   font-family: "Material Icons";
   color: #e1e1e1;
-  font-size: 28px;
+  font-size: 28rem;
 }

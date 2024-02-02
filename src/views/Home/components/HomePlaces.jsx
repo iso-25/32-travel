@@ -1,14 +1,14 @@
-import { useState, useRef, useEffect} from "react";
+import { useState, useRef, useEffect } from "react";
 import { useSpring, animated } from "react-spring";
 
 export const HomePlaces = () => {
   const [tab, setTab] = useState(1);
   const [popular, setViewAll] = useState(true);
-  const [defaultHeight, setdefaultHeight] = useState(54);
+  const [defaultHeight, setDefaultHeight] = useState(54);
   const [prevHeight, setPrevHeight] = useState(defaultHeight);
   const [display, setDisplay] = useState("flex");
   const ref = useRef(null);
-  
+
   useEffect(() => {
     if (ref.current) {
       setPrevHeight(ref.current.clientHeight);
@@ -17,16 +17,16 @@ export const HomePlaces = () => {
 
   const clickViewAll = () => {
     if (ref.current.clientHeight === 0) {
-      setPrevHeight(defaultHeight);  
+      setPrevHeight(defaultHeight);
     } else {
-    setPrevHeight(ref.current.clientHeight);
+      setPrevHeight(ref.current.clientHeight);
     }
     setViewAll(false);
   };
 
   useEffect(() => {
-    if (prevHeight > 0 && prevHeight !==defaultHeight) {
-      setdefaultHeight(prevHeight);
+    if (prevHeight > 0 && prevHeight !== defaultHeight) {
+      setDefaultHeight(prevHeight);
     }
   }, [prevHeight]);
 
@@ -37,7 +37,11 @@ export const HomePlaces = () => {
       }
     },
     opacity: popular ? 1 : 0,
-    height: popular ? (prevHeight !== null ? `${prevHeight}px` : '${defaultHeight}px' ) : '0',
+    height: popular
+      ? prevHeight !== null
+        ? `${prevHeight}px`
+        : "${defaultHeight}px"
+      : "0",
     transform: popular ? "scaleY(1)" : "scaleY(0)",
     marginBottom: popular ? "21px" : "0",
     onRest: () => {
@@ -56,6 +60,7 @@ export const HomePlaces = () => {
       duration: 300,
     },
   });
+ 
 
   return (
     <div className="home-places">

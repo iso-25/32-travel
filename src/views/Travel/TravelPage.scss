@@ -1,97 +1,124 @@
 @import "./components/TravelImgInfo.scss";
 
-header {
-  
-}
-
-.invalid-state-id{
-  padding: 150px;
+.invalid-state-id {
+  padding: 150rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
-  gap: 50px;
+  gap: 50rem;
 }
 
 .travel {
+  padding: 26rem;
 
-
-  padding: 28px;
-
-  &__main-container{
+  @include desktop-small {
+    padding: 52rem;
     display: flex;
-    // flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    gap: 25px;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 50px;
+    height: 100%;
+  }
 
-    .indexes-desktop{
-      max-width: 20%;
-      width: 100%;
-      display: none;
+  &__info {
+    @include desktop-small {
+      max-width: 40%;
+      height: 100%;
+      position: relative;
+    }
+  }
 
-      .time,
-      .temp,
-      .rating {
-  
-        & span {
-          margin-right: 26px;
-        }
+  &__info-arrowLeft {
+    display: none;
+
+    @include desktop-small {
+      margin: 19rem 0  39rem 0;
+      width: 44rem;
+      height: 44rem;
+      background: linear-gradient(0deg, #1b1b1b 0%, #1b1b1b 100%),
+      rgba(255, 255, 255, 0.4);
+      backdrop-filter: blur(20rem);
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      transition: 0.2s all ease-in-out;
+
+      &:hover {
+        transform: scale(1.3);
       }
-
-      @include tablet-small {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        justify-content: space-between;
-        gap: 100px;
-        }      
     }
-    }
+    
+  }
 
   &__img {
-    width: 100%px;
-    height: 460px;
-    border-radius: 25.5px;
+    width: 100%rem;
+    height: 460rem;
+    border-radius: 25.5rem;
     background: #d9d9d9;
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    box-shadow: 0rem 4rem 4rem 0rem rgba(0, 0, 0, 0.25);
     overflow: hidden;
     display: flex;
     align-items: center;
     position: relative;
-    margin-bottom: 38px;
+    margin-bottom: 38rem;
 
     img {
-      border-radius: 30px;
+      border-radius: 30rem;
       width: 100%;
       height: 100%;
       object-fit: cover;
       object-position: center center;
     }
+
+    @include desktop-small {
+      height: 100%;
+    }
   }
 
   &__type-info {
-    height: 27px;
+    height: 27rem;
     display: flex;
     align-items: end;
-    gap: 32px;
+    gap: 32rem;
     color: rgba(27, 27, 27, 0.62);
     font-family: Inter;
-    font-size: 16px;
+    font-size: 16rem;
     font-weight: 600;
     line-height: normal;
-    margin-bottom: 32px;
-    cursor: pointer;
+    margin-bottom: 32rem;
 
     .active-type {
       color: #1b1b1b;
-      font-size: 22px;
+      font-size: 22rem;
     }
 
     & p {
-      vertical-align: bottom;
       transition: 0.2s all ease-in-out;
+      @include desktop-small {
+        cursor: pointer;
+        transition: 0.2s all ease-in-out;
+        &:hover {
+          transform: scale(1.2);
+        }
+      }
+    }
+
+    .active-type {
+      @include desktop-small {
+        cursor: default;
+        &:hover {
+          transform: none;
+        }
+      }
+    }
+
+    @include desktop-small {
+      align-items: end;
     }
   }
 
@@ -101,10 +128,10 @@ header {
     align-items: center;
     color: #7e7e7e;
     font-family: Roboto;
-    font-size: 18px;
+    font-size: 18rem;
     font-weight: 500;
     line-height: normal;
-    margin-bottom: 34px;
+    margin-bottom: 34rem;
 
     .time,
     .temp,
@@ -113,14 +140,14 @@ header {
       align-items: center;
 
       & span {
-        width: 34px;
-        height: 34px;
-        border-radius: 6px;
+        width: 34rem;
+        height: 34rem;
+        border-radius: 6rem;
         background: #ededed;
         display: flex;
         justify-content: center;
         align-items: center;
-        margin-right: 6px;
+        margin-right: 6rem;
       }
     }
 
@@ -128,24 +155,35 @@ header {
       position: relative;
       & > .cels {
         position: absolute;
-        right: 10px;
+        right: 10rem;
         top: 0;
       }
     }
   }
 
   &__desc {
-    max-height: 135px;
-    margin-bottom: 20px;
-    overflow: hidden;
+    margin-bottom: 20rem;
     overflow: auto;
+
+    @include desktop-small {
+      min-height: 250rem;
+      max-height: 40%;
+    }
   }
 
   &__desc-txt {
+    width: 100%;
+    height: 100%;
     font-family: Roboto;
-    font-size: 18px;
+    font-size: 18rem;
     font-weight: 500;
     line-height: 150.188%;
+    color: #7e7e7e;
+  }
+
+  &__desc-txt-overview {
+    overflow: auto;
+    color: #000000;
     background: linear-gradient(
       180deg,
       #a5a5a5 29.69%,
@@ -154,27 +192,44 @@ header {
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    padding-right: 15px;
+    padding-right: 15rem;
+  }
+
+  &__btn-container {
+    @include desktop-small {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
   }
 
   &__btn {
-    padding: 21px 120px;
-    border-radius: 20px;
+    padding: 21rem 120rem;
+    border-radius: 20rem;
     background: linear-gradient(0deg, #1b1b1b 0%, #1b1b1b 100%),
       rgba(255, 255, 255, 0.4);
-    box-shadow: 0px 13px 26px -2px rgba(0, 0, 0, 0.12);
+    box-shadow: 0rem 13rem 26rem -2rem rgba(0, 0, 0, 0.12);
     display: flex;
     align-items: center;
     justify-content: center;
-    cursor: pointer;
+
+    @include desktop-small {
+      max-width: 80%;
+      width: 100%;
+      cursor: pointer;
+      transition: 0.2s all ease-in-out;
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
   }
 
   &__btn-txt {
-    min-width: 135px;
-    max-width: 200px;
+    min-width: 135rem;
+    max-width: 200rem;
     color: #fff;
     font-family: Roboto;
-    font-size: 20px;
+    font-size: 20rem;
     font-weight: 500;
     display: flex;
     align-items: center;

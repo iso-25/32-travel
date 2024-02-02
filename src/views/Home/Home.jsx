@@ -4,12 +4,14 @@ import { HomePlaces } from "./components/HomePlaces";
 import { HomeTravel } from "./components/HomeTravel";
 
 export const Home = () => {
-	return (
-		<div className="home">
-			<HomeHeader />
-			<HomeFilter />
-			<HomePlaces />
-			<HomeTravel />
-		</div>
-	);
+  return (
+    <div className="home">
+      <div className="home__header-container">
+        <HomeHeader />
+        <HomeFilter />
+      </div>
+      <HomePlaces />
+      <HomeTravel />
+    </div>
+  );
 };

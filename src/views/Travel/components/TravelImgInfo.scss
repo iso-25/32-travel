@@ -5,7 +5,7 @@
   background: transparent;
   left: 0;
   top: 0;
-  padding: 19px;
+  padding: 19rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -16,31 +16,49 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    @include desktop-small {
+      justify-content: flex-end;
+    }    
   }
 
   &__hedear-arrowLeft,
   &__hedear-bookmark {
-    width: 44px;
-    height: 44px;
+    width: 44rem;
+    height: 44rem;
     background: rgba(29, 29, 29, 0.4);
-    backdrop-filter: blur(20px);
+    backdrop-filter: blur(20rem);
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
-    cursor: pointer;
+  }
+
+  &__hedear-arrowLeft {
+    @include desktop-small {
+      display: none;
+    }    
+  }
+  
+  &__hedear-bookmark {
+    @include desktop-small {
+      cursor: pointer;
+      transition: 0.2s all ease-in-out;
+      &:hover {
+        transform: scale(1.3);
+      }
+    }    
   }
 
   &__info {
     width: 100%;
-    border-radius: 15px;
+    border-radius: 15rem;
     background: rgba(29, 29, 29, 0.3);
-    box-shadow: 0px 5px 9px 0px rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(20px);
-    padding: 15px;
+    box-shadow: 0rem 5rem 9rem 0rem rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20rem);
+    padding: 15rem;
     display: flex;
     flex-direction: column;
-    gap: 13px;
+    gap: 13rem;
     font-family: Roboto;
     font-weight: 500;
     color: #cac8c8;
@@ -48,21 +66,20 @@
     .info-nameTravel {
       color: #fff;
       font-family: Inter;
-      font-size: 24px;
+      font-size: 24rem;
       font-weight: 600;
       display: flex;
       justify-content: space-between;
       align-items: flex-end;
       > p {
-        padding-right: 25px;
-
+        padding-right: 25rem;
       }
     }
 
     .info-price {
       color: #cac8c8;
       font-family: Roboto;
-      font-size: 16px;
+      font-size: 16rem;
       font-weight: 400;
     }
 
@@ -72,21 +89,21 @@
       align-items: center;
       color: #cac8c8;
       font-family: Roboto;
-      font-size: 18px;
+      font-size: 18rem;
       font-weight: 400;
       line-height: normal;
 
       .place {
-        padding-left: 22px;
+        padding-left: 22rem;
         color: #cac8c8;
         position: relative;
-        padding-right: 25px;
+        padding-right: 25rem;
         & span {
           max-width: 100%;
-          width: 22px;
-          height: 22px;
+          width: 22rem;
+          height: 22rem;
           position: absolute;
-          left: -6px;
+          left: -6rem;
           top: 50%;
           transform: translateY(-50%);
           & svg {
@@ -99,7 +116,7 @@
       .price-value {
         height: 100%;
         position: relative;
-        font-size: 26px;
+        font-size: 26rem;
         font-weight: 500;
         line-height: normal;
         > p {
@@ -111,11 +128,11 @@
         & span {
           height: 100%;
           position: absolute;
-          left: -15px;
+          left: -15rem;
           top: 100%;
           transform: translateY(-70%);
           color: #434343;
-          font-size: 20px;
+          font-size: 20rem;
         }
       }
     }

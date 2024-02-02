@@ -31,3 +31,12 @@ $desktop: 1200px;
 }
 
 
+@mixin hover-btn {
+  @media (min-width: $desktop-small) {
+    transition: 0.2s all ease-in-out;
+    &:hover{
+      transform: scale(1.1);
+    }
+  }
+}
+

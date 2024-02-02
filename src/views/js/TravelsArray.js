@@ -13,8 +13,7 @@ export const travelsItems = [
     price: "350",
     time: "21",
     temperature: "8",
-    overviev: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea fugit nemo voluptate aliquam ab mollitia, pariatur labore quos sunt amet quis earum, neque veniam animi, quaerat dolores. Ea neque dolore deleniti nostrum dignissimos. Porro eveniet repudiandae laborum veritatis beatae ex quo delectus perspiciatis deserunt exercitationem autem magnam sit, commodi quos voluptatum, quisquam voluptate culpa quia! Ratione et ipsam voluptatum rem earum in cumque fuga obcaecati vel?",
-    details: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea fugit nemo voluptate aliquam ab mollitia, pariatur labore quos sunt amet quis earum, neque veniam animi, quaerat dolores. Ea neque dolore deleniti nostrum dignissimos. Porro eveniet repudiandae laborum veritatis beatae ex quo delectus perspiciatis deserunt exercitationem autem magnam sit, commodi quos voluptatum, quisquam voluptate culpa quia! Ratione et ipsam voluptatum rem earum in cumque fuga obcaecati vel?",
+    overviev: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum alias quae quia perferendis inventore a est quam sunt laborum tenetur, beatae veniam, ex ut illum magnam quaerat qui ullam. Minus et nam error quod numquam magni, asperiores fuga corporis eius qui exercitationem aliquam odit debitis architecto rem enim inventore sint ea tempore deleniti! Et quisquam enim autem facilis ea tempora. Rem corporis iure vitae, rerum magnam quo exercitationem reprehenderit ab maiores tenetur culpa aut laboriosam. Fugit ullam dolorem quam voluptatum maiores quod nihil non facilis! Aspernatur eos cumque, reiciendis soluta quaerat, minus fugiat magnam error, quisquam unde maiores sint saepe quibusdam beatae. Vero repellat eum illo libero fugiat? Modi dignissimos fugit vitae unde optio saepe sapiente necessitatibus dolore numquam earum iste eius ea ipsum, et ratione ut impedit aliquam, voluptates vero cumque excepturi natus. Perferendis ipsam, iste est mollitia cupiditate consequatur odit illo consequuntur natus sed reiciendis fugit, dicta aperiam in quos velit recusandae similique dolorum ex nemo suscipit. Molestias explicabo consequuntur commodi repellat, eligendi provident sequi esse alias earum expedita, nemo, aliquam adipisci sapiente atque nulla. Dolor laborum aliquid voluptatum quas quia rem dicta, ullam illo voluptates non magni soluta! Pariatur recusandae natus, molestiae doloribus laudantium repellendus porro ullam perferendis sunt. Reiciendis vitae officia illum minima officiis laborum iusto ea, tempore possimus est amet ratione, aliquam eaque omnis sapiente magnam doloribus accusamus nesciunt cupiditate. Aperiam, nostrum, deserunt corrupti similique perferendis qui animi autem soluta quos aut at ea corporis commodi magnam iure? Non placeat reiciendis facere illo, qui harum doloribus consectetur ullam voluptatibus temporibus eveniet?",
   },
   {
     id: 2,
@@ -31,7 +30,6 @@ export const travelsItems = [
     time: "8",
     temperature: "16",
     overviev: "This vast mountain range is renowned for its remarkable diversity in terms of topography and climate. It features towering peaks, active volcanoes, deep canyons, expansive plateaus, and lush valleys. The Andes are also home to",
-    details: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea fugit nemo voluptate aliquam ab mollitia, pariatur labore quos sunt amet quis earum, neque veniam animi, quaerat dolores. Ea neque dolore deleniti nostrum dignissimos. Porro eveniet repudiandae laborum veritatis beatae ex quo delectus perspiciatis deserunt exercitationem autem magnam sit, commodi quos voluptatum, quisquam voluptate culpa quia! Ratione et ipsam voluptatum rem earum in cumque fuga obcaecati vel?",
   },
   {
     id: 3,
@@ -48,7 +46,6 @@ export const travelsItems = [
     time: "21",
     temperature: "8",
     overviev: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea fugit nemo voluptate aliquam ab mollitia, pariatur labore quos sunt amet quis earum, neque veniam animi, quaerat dolores. Ea neque dolore deleniti nostrum dignissimos. Porro eveniet repudiandae laborum veritatis beatae ex quo delectus perspiciatis deserunt exercitationem autem magnam sit, commodi quos voluptatum, quisquam voluptate culpa quia! Ratione et ipsam voluptatum rem earum in cumque fuga obcaecati vel?",
-    details: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea fugit nemo voluptate aliquam ab mollitia, pariatur labore quos sunt amet quis earum, neque veniam animi, quaerat dolores. Ea neque dolore deleniti nostrum dignissimos. Porro eveniet repudiandae laborum veritatis beatae ex quo delectus perspiciatis deserunt exercitationem autem magnam sit, commodi quos voluptatum, quisquam voluptate culpa quia! Ratione et ipsam voluptatum rem earum in cumque fuga obcaecati vel?",
   },
   {
     id: 4,
@@ -65,7 +62,6 @@ export const travelsItems = [
     time: "8",
     temperature: "16",
     overviev: "This vast mountain range is renowned for its remarkable diversity in terms of topography and climate. It features towering peaks, active volcanoes, deep canyons, expansive plateaus, and lush valleys. The Andes are also home to",
-    details: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea fugit nemo voluptate aliquam ab mollitia, pariatur labore quos sunt amet quis earum, neque veniam animi, quaerat dolores. Ea neque dolore deleniti nostrum dignissimos. Porro eveniet repudiandae laborum veritatis beatae ex quo delectus perspiciatis deserunt exercitationem autem magnam sit, commodi quos voluptatum, quisquam voluptate culpa quia! Ratione et ipsam voluptatum rem earum in cumque fuga obcaecati vel?",
   },
   {
     id: 5,
@@ -82,7 +78,6 @@ export const travelsItems = [
     time: "21",
     temperature: "8",
     overviev: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea fugit nemo voluptate aliquam ab mollitia, pariatur labore quos sunt amet quis earum, neque veniam animi, quaerat dolores. Ea neque dolore deleniti nostrum dignissimos. Porro eveniet repudiandae laborum veritatis beatae ex quo delectus perspiciatis deserunt exercitationem autem magnam sit, commodi quos voluptatum, quisquam voluptate culpa quia! Ratione et ipsam voluptatum rem earum in cumque fuga obcaecati vel?",
-    details: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea fugit nemo voluptate aliquam ab mollitia, pariatur labore quos sunt amet quis earum, neque veniam animi, quaerat dolores. Ea neque dolore deleniti nostrum dignissimos. Porro eveniet repudiandae laborum veritatis beatae ex quo delectus perspiciatis deserunt exercitationem autem magnam sit, commodi quos voluptatum, quisquam voluptate culpa quia! Ratione et ipsam voluptatum rem earum in cumque fuga obcaecati vel?",
   },
   {
     id: 6,
@@ -99,6 +94,5 @@ export const travelsItems = [
     time: "8",
     temperature: "16",
     overviev: "This vast mountain range is renowned for its remarkable diversity in terms of topography and climate. It features towering peaks, active volcanoes, deep canyons, expansive plateaus, and lush valleys. The Andes are also home to",
-    details: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea fugit nemo voluptate aliquam ab mollitia, pariatur labore quos sunt amet quis earum, neque veniam animi, quaerat dolores. Ea neque dolore deleniti nostrum dignissimos. Porro eveniet repudiandae laborum veritatis beatae ex quo delectus perspiciatis deserunt exercitationem autem magnam sit, commodi quos voluptatum, quisquam voluptate culpa quia! Ratione et ipsam voluptatum rem earum in cumque fuga obcaecati vel?",
   },
 ];

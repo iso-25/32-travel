@@ -41,77 +41,64 @@ export const TravelPage = () => {
             <img src={travel.pathImgTravel} alt="travel" />
             <TravelImgInfo itemTravel={travel} onClick={handleGoBack} />
           </div>
-          <div className="travel__indexes indexes-desktop">
-          <div className="time">
-            <span>
-              <TravelItemImg type="clock" />
-            </span>
-            {travel.time} hours
-          </div>
-          <div className="temp">
-            <span>
-              <TravelItemImg type="cloud" />
-            </span>
-            {travel.temperature} &nbsp; <small className="cels">&deg;</small>C
-          </div>
-          <div className="rating">
-            <span>
-              <TravelItemImg type="star2" />
-            </span>
-            {travel.rating}
-          </div>
-
-          </div>
+        </div>
+        <div className="travel__info">
+        <div className="travel__info-arrowLeft" onClick={handleGoBack}>
+          <TravelItemImg type="arrowLeft" />
         </div>
 
-        <div className="travel__type-info">
-          <p
-            onClick={() => setOverview(true)}
-            className={`overview ${isOverview ? "active-type" : ""}`}
-          >
-            Overview
-          </p>
-          <p
-            onClick={() => setOverview(false)}
-            className={`details ${isOverview ? "" : "active-type"}`}
-          >
-            Details
-          </p>
-        </div>
-
-        <div className="travel__indexes  indexes-mobile">
-          <div className="time">
-            <span>
-              <TravelItemImg type="clock" />
-            </span>
-            {travel.time} hours
+          <div className="travel__type-info">
+            <p
+              onClick={() => setOverview(true)}
+              className={`overview ${isOverview ? "active-type" : ""}`}
+            >
+              Overview
+            </p>
+            <p
+              onClick={() => setOverview(false)}
+              className={`details ${isOverview ? "" : "active-type"}`}
+            >
+              Details
+            </p>
           </div>
-          <div className="temp">
-            <span>
-              <TravelItemImg type="cloud" />
-            </span>
-            {travel.temperature} &nbsp; <small className="cels">&deg;</small>C
+          <div className="travel__indexes">
+            <div className="time">
+              <span>
+                <TravelItemImg type="clock" />
+              </span>
+              {travel.time} hours
+            </div>
+            <div className="temp">
+              <span>
+                <TravelItemImg type="cloud" />
+              </span>
+              {travel.temperature} &nbsp; <small className="cels">&deg;</small>C
+            </div>
+            <div className="rating">
+              <span>
+                <TravelItemImg type="star2" />
+              </span>
+              {travel.rating}
+            </div>
           </div>
-          <div className="rating">
-            <span>
-              <TravelItemImg type="star2" />
-            </span>
-            {travel.rating}
+          <div className="travel__desc">
+            <div
+              className={`travel__desc-txt ${
+                isOverview ? "travel__desc-txt-overview" : ""
+              }`}
+            >
+              {travel.overviev}
+            </div>
           </div>
-        </div>
-
-        <div className="travel__desc">
-          <div className="travel__desc-txt">
-            {isOverview ? travel.overviev : travel.details}
-          </div>
-        </div>
-
-        <div className="travel__btn">
-          <div className="travel__btn-txt">
-            Book Now
-            <span>
-              <TravelItemImg type="smg" />
-            </span>
+          <div className="travel__btn-container">
+            <div className="travel__btn">
+              <div className="travel__btn-txt">
+                Book Now
+                <span>
+                  <TravelItemImg type="smg" />
+                </span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
